@@ -1,0 +1,95 @@
+package sample;
+
+import java.security.InvalidAlgorithmParameterException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String wishOption = "Y";
+		try {
+			System.out.println("Press 1 for Add, 2 for Subtraction, 3 for multiplication, 4 for division,"
+				+ "5 To calculate X% of Y" + "6 To Find What Percentage of Y is X" +
+				"7 Find % of increase or descrease from X to Y" + "8 To Exit");
+	
+		while (wishOption.equalsIgnoreCase("Y")) {
+			
+			/* ToDo:- Externalize this options to load from configuration */
+			
+			System.out.println("Enter Operation");
+			System.out.println("1.Add");
+			System.out.println("2.Subtract");
+			System.out.println("3.Multiplication");
+			System.out.println("4.Division");
+			System.out.println("5 To calculate X% of Y");
+			System.out.println("6 To Find What Percentage of Y is X");
+			System.out.println("7 To % of increase or descrease from X to Y");
+			System.out.println("8 Exit");
+			
+			int operation;
+			operation= sc.nextInt();
+			
+			
+			if (operation < 0 || operation > 8)
+			{
+				System.out.println("Invalid Operation" + "Enter Valid menu from 1 to 8");
+				operation = sc.nextInt();
+			}   
+			
+			int number1,number2;
+			try
+			{
+			 System.out.println("Enter First Number");
+			 number1 = sc.nextInt();
+			
+			 System.out.println("Enter Second Number");
+			 number2 = sc.nextInt();
+			}
+			
+			catch(InputMismatchException ex)
+			{
+				System.out.println(String.format("Invalid Input Only number is expected. Please type 'Y' to beign."));
+			}
+		
+		
+			switch (operation) {
+			case 1:
+				int additionResult = number1 + number2;
+				System.out.println(number1 + " + " + number2 + " = " + additionResult);
+				break;
+			case 2:
+				int subtractionResult = number1 - number2;
+				System.out.println(number1 + " - " + number2 + " = " + subtractionResult);
+				break;
+			case 3:
+				int multiplicationResult = number1 * number2;
+				System.out.println(number1 + " * " + number2 + " = " + multiplicationResult);
+				break;
+			case 4:
+				int divisionResult = number1 / number2;
+				System.out.println(number1 + " / " + number2 + " = " + divisionResult);
+				break;
+			case 5:
+				System.exit(0);
+			}
+			
+			System.out.println("Wish to continue(Y/N)");
+			wishOption = sc.next();
+			
+			if(wishOption.equalsIgnoreCase("N"))
+				System.exit(0);
+
+		}
+		}
+		catch(Exception ex)
+		{
+	  	  System.out.println(String.format("Runtime exception occured", ex.getMessage()));
+				
+		}
+		
+	}
+	
+}

@@ -1,0 +1,55 @@
+package sample;
+
+/*
+ * Author: Vivekananthan 
+ * pvivekdev@gmail.com
+ * For Zoho SDE trainer Role.  
+ * This is class acts as utility to calculator class and can be individual tested without calculator class involvement  
+ */
+public final class MathHelper {
+
+	public static int ParseStringToInteger(String input)
+	{
+		try
+		{
+			return Integer.parseInt(input);
+		}
+		catch(Exception ex)
+		{
+			return -1;
+		}
+	}
+
+	static int Add(int number1, int number2)
+	{
+		return number1 + number2;
+	}
+
+	static int Sub(int number1, int number2)
+	{
+		return number1 - number2;
+	}
+	static int Multiply(int number1, int number2)
+	{
+		return number1*number2;
+	}
+
+	static int Divison(int number1, int number2)
+	{
+		return number1/number2;
+	}
+   
+	static int CalculateXPercentageOfY(int number1, int number2)
+	{
+	 	int temp =  (number1 %100);
+	 	return temp * number2 /100;
+	}
+	
+	static int CalculateWhatPercentageOfYisX(int number1, int number2)
+	{
+		int temp = number1 % number2;
+		return (temp * 100)/ 100;
+	}
+
+
+}

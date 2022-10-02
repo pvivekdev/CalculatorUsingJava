@@ -1,0 +1,31 @@
+package sample;
+
+public final class MathHelper {
+	
+	public static int IntegerParser(String input)
+	{
+		try
+		{
+			return Integer.parseInt(input);
+		}
+		catch(Exception ex)
+		{
+		  return -1;
+		}
+	}
+	
+	static int Add(int number1, int number2)
+	{
+		return number1 + number2;
+	}
+	
+	static int Sub(int number1, int number2)
+	{
+		return number1 - number2;
+	}
+	static int Multiply(int number1, int number2)
+	{
+		return number1*number2;
+	}
+
+}
