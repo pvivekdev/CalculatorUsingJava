@@ -22,4 +22,10 @@ steps:
     applicationType: 'java'
     fortifyBuildId: 'Test'
     scaVerbose: true
+- task: FortifyScanCentralSAST@7
+  inputs:
+    scanCentralClientToken: '$(ScanCentral.ClientToken)'
+    sscUrl: 'https://pg6-w19-sql02.fortifylab.net/ssc'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
+    buildTool: 'mvn'
     fortifyScanType: 'LocalScan'
