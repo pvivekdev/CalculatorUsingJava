@@ -14,8 +14,11 @@ steps:
   inputs:
     scanCentralClientToken: '$(ScanCentral.ClientToken)'
     sscCiToken: '$(ScanCentral.SscCiToken)'
-    buildTool: 'dotnet'
-- script: echo Hello, world!
+    buil- task: FortifyScanCentralSAST@7
+  inputs:
+    scanCentralClientToken: '$(ScanCentral.ClientToken)'
+    sscUrl: 'e423432142142'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
   displayName: 'Run a one-line script'
 
 - script: |
