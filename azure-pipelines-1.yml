@@ -11,6 +11,7 @@ steps:
   inputs:
     scanCentralClientToken: '$(ScanCentral.ClientToken)'
     sscCiToken: '$(ScanCentral.SscCiToken)'
+    scanCentralCtrlUrl: https://sc-w22-ctrl6.fortifylab.net:8443/scancentral-ctrl
     buildTool: 'dotnet'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
