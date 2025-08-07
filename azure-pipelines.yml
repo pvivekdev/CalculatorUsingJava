@@ -1,3 +1,5 @@
+pool:
+ default
 steps:
 - task: FortifyScanCentralSAST@7
   inputs:
